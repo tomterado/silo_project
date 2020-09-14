@@ -1,5 +1,39 @@
 .App {
   text-align: center;
+  background: linear-gradient(rgba(183, 227, 209, 1), transparent);
+  height: 100vh;
+
+}
+
+.Container {
+  display: flex;
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  /*filter: blur(4px);*/
+  /*width: 100vw;*/
+}
+
+.IndividualCard {
+  border-radius: 16px;
+  height: 275px;
+  width: 250px;
+  display: flex;
+  margin: 2em;
+  flex-direction: column;
+  justify-content: space-between;
+  /*flex-wrap: wrap;*/
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.IndividualCard:hover {
+  transform: scale(0.9); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.CardContent {
+  background-color: #FFFFFF;
+  height: 100px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
 .App-logo {
@@ -15,7 +49,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +60,12 @@
 
 .App-link {
   color: #61dafb;
+}
+
+#BlurredView {
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+  width: 100vw;
 }
 
 @keyframes App-logo-spin {
