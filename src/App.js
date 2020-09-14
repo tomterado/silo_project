@@ -87,18 +87,22 @@ function App() {
         }
         return(
             <div
-                style={{height: 600, width: 630, backgroundColor: '#FFFFFF', display: 'flex', alignItems: 'center',
-                justifyContent: 'center', margin: 'auto',
+                style={{height: 600, width: 630, backgroundColor: '#FFFFFF', display: 'flex', margin: 'auto',
                     position: 'absolute',
                     top: 0, left: 0, bottom: 0, right: 0, flexDirection: 'column', padding: '2em',
                 borderRadius: 32
             }}>
 
-                    <div style={{height: 50, width: 50, backgroundColor: '#000000', borderRadius: 25}} onClick={() => setShowLightBox(false)}/>
+                    <div style={{display: 'flex', justifyContent: 'flex-end'}} onClick={() => setShowLightBox(false)}>
+                        <img src={require("./close_button.png")} height={50} width={50}/>
+                    </div>
+                <div style={{display: 'flex', alignItems: 'center',
+                    justifyContent: 'center', flexDirection: 'column'}}>
                     <div style={{height: 200, width: 200, backgroundColor: lightboxData.color, borderRadius: 100}}/>
                     <h1>{lightboxData.name.charAt(0).toUpperCase() + lightboxData.name.slice(1)}</h1>
                     <h3>{lightboxData.year}</h3>
                     <p>{dummyDescription}</p>
+                </div>
             </div>
         )
     }
@@ -117,6 +121,11 @@ function App() {
 
     return (
         <div className="App" >
+            <div style={{padding: '4em', paddingBottom: '4em'}}>
+                <h1 style={{margin: 0}}> jobPostsAreWayTooLongSoWellMakeThisOneShort </h1>
+
+            </div>
+
             {/*<div className="Container" style={ {filter: showLightbox ? "blur(1px)" : null }}>*/}
             <div className="Container" id="id01">
                 {displayData()}
