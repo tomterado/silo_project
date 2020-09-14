@@ -25,9 +25,54 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.LightBoxContainer {
+  height: 600px;
+  width: 630px;
+  background-color: #FFFFFF;
+  display: flex;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  flex-direction: column;
+  padding: 2em;
+  border-radius: 32px;
+}
+
+.CardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.LightBoxContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.CloseButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .IndividualCard:hover {
   transform: scale(0.9); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
+
+
+.headingContainer {
+  padding: 4em;
+}
+
+.headingTitle {
+  margin: 0px;
+}
+
 
 .CardContent {
   background-color: #FFFFFF;

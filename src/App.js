@@ -59,16 +59,18 @@ function App() {
             return
         }
         return(
-            <div id="id02" style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', border: '0px solid #000000'}}>
+            <div id="id02" className="CardContainer">
                 {endpointData && endpointData.data.map((ele,ind) => {
                     return(
-                        <div className="IndividualCard" style={{backgroundColor: ele.color,borderBottomLeftRadius: 16 }}
-                             onClick={() => {
-                                 setShowLightBox(!showLightbox)
-                                 setLightboxData(ele)
-                             }}
-                        >
-                            <div/>
+                        <div
+                            className="IndividualCard"
+                            style={{backgroundColor: ele.color,borderBottomLeftRadius: 16 }}
+                            onClick={() => {
+                                setShowLightBox(!showLightbox)
+                                setLightboxData(ele)
+                            }}>
+
+                        <div/>
 
                             <div className="CardContent">
                                 <h4>{ele.name.charAt(0).toUpperCase() + ele.name.slice(1)}</h4>
@@ -86,18 +88,11 @@ function App() {
             return
         }
         return(
-            <div
-                style={{height: 600, width: 630, backgroundColor: '#FFFFFF', display: 'flex', margin: 'auto',
-                    position: 'absolute',
-                    top: 0, left: 0, bottom: 0, right: 0, flexDirection: 'column', padding: '2em',
-                borderRadius: 32
-            }}>
-
-                    <div style={{display: 'flex', justifyContent: 'flex-end'}} onClick={() => setShowLightBox(false)}>
-                        <img src={require("./close_button.png")} height={50} width={50}/>
-                    </div>
-                <div style={{display: 'flex', alignItems: 'center',
-                    justifyContent: 'center', flexDirection: 'column'}}>
+            <div className="LightBoxContainer">
+                <div className="CloseButtonContainer" onClick={() => setShowLightBox(false)}>
+                    <img src={require("./close_button.png")} height={50} width={50}/>
+                </div>
+                <div className="LightBoxContent">
                     <div style={{height: 200, width: 200, backgroundColor: lightboxData.color, borderRadius: 100}}/>
                     <h1>{lightboxData.name.charAt(0).toUpperCase() + lightboxData.name.slice(1)}</h1>
                     <h3>{lightboxData.year}</h3>
@@ -112,8 +107,6 @@ function App() {
     const modal = document.getElementById('id01');
     const container = document.getElementById('id02');
     window.onclick = function(event) {
-        // console.log('eventTarget', event.target)
-        // console.log('modal clikced', event.target  === container)
         if (event.target === container  || event.target === modal ) {
             setShowLightBox(false)
         }
@@ -121,12 +114,12 @@ function App() {
 
     return (
         <div className="App" >
-            <div style={{padding: '4em', paddingBottom: '4em'}}>
-                <h1 style={{margin: 0}}> jobPostsAreWayTooLongSoWellMakeThisOneShort </h1>
-
+            <div className="headingContainer">
+                <h1 className="headingTitle">
+                    jobPostsAreWayTooLongSoWellMakeThisOneShort
+                </h1>
             </div>
 
-            {/*<div className="Container" style={ {filter: showLightbox ? "blur(1px)" : null }}>*/}
             <div className="Container" id="id01">
                 {displayData()}
                 {showLightbox ? lightBox() : null}
